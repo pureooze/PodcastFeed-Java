@@ -44,13 +44,13 @@ public class iTunesFeedTest {
   @Test
   public void getAuthor () throws Exception {
     feed = new iTunesFeed("http://historyofrome.libsyn.com/rss/");
-    assertThat(feed.getAuthor(), equalTo(null));
+    assertThat(feed.getAuthor(), equalTo("Mike Duncan"));
 
     feed = new iTunesFeed("https://rss.art19.com/levar-burton-reads");
-    assertThat(feed.getAuthor(), equalTo("originals@stitcher.com (Stitcher)"));
+    assertThat(feed.getAuthor(), equalTo("LeVar Burton and Stitcher"));
 
     feed = new iTunesFeed("https://feeds.soundcloud.com/users/soundcloud:users:63303345/sounds.rss");
-    assertThat(feed.getAuthor(), equalTo(null));
+    assertThat(feed.getAuthor(), equalTo("OWASP 24/7"));
   }
 
   @Test
