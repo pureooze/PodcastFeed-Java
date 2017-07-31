@@ -34,22 +34,19 @@ public class PodcastList extends AnchorPane implements Initializable {
   @Override
   public void initialize (URL url, ResourceBundle rb) {
     podcastData = new PodcastListData("data/PodcastListData");
-    podcastNameList.add("Risky Biz");
-    podcastNameList.add("TED");
-    podcastNameList.add("TED Talks");
-    podcastNameList.add("Music Now");
-    podcastNameList.add("Another one 2 Listen");
-    podcastNameList.add("RSS Reader");
-    podcastNameList.add("Security Yesterday");
-    podcastNameList.add("RIP Dreams");
+
+    List<PodcastListItem> iTunesList = podcastData.getITunesData();
+    for (PodcastListItem item : iTunesList) {
+      podcastNameList.add(item.getTitle());
+    }
 
     podcastListHeader.setText("Podcasts");
     podcastListHeader.setFont(new Font("Droid Sans", 14));
     podcastListHeader.setTooltip(new Tooltip("Hello!"));
     podcastListHeader.getTooltip().setFont(new Font(11));
 
-    iTunesFeed feed = new iTunesFeed("http://historyofrome.libsyn.com/rss/");
-    podcastNameList.add(feed.getTitle());
+//    iTunesFeed feed = new iTunesFeed("http://historyofrome.libsyn.com/rss/");
+//    podcastNameList.add(feed.getTitle());
 
     podcastList.itemsProperty().bind(listProperty);
     listProperty.set(FXCollections.observableArrayList(podcastNameList));
