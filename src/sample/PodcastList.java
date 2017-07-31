@@ -29,8 +29,11 @@ public class PodcastList extends AnchorPane implements Initializable {
   private List<String> podcastNameList = new ArrayList<>();
   private ListProperty<String> listProperty = new SimpleListProperty<>();
 
+  private PodcastListData podcastData;
+
   @Override
   public void initialize (URL url, ResourceBundle rb) {
+    podcastData = new PodcastListData("data/PodcastListData");
     podcastNameList.add("Risky Biz");
     podcastNameList.add("TED");
     podcastNameList.add("TED Talks");
@@ -46,7 +49,6 @@ public class PodcastList extends AnchorPane implements Initializable {
     podcastListHeader.getTooltip().setFont(new Font(11));
 
     iTunesFeed feed = new iTunesFeed("http://historyofrome.libsyn.com/rss/");
-    System.out.println(feed.getTitle());
     podcastNameList.add(feed.getTitle());
 
     podcastList.itemsProperty().bind(listProperty);

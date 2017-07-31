@@ -9,31 +9,20 @@ import org.jdom2.Element;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
+import java.util.List;
 
 public class FeedFetcher {
   private URL targetURL;
   private SyndFeed feed;
 
   public FeedFetcher (String rssURL) {
+    System.out.println(rssURL);
     try {
       targetURL = new URL(rssURL);
       SyndFeedInput input = new SyndFeedInput();
 
       try {
         feed = input.build(new XmlReader(targetURL));
-
-        for (Element element : feed.getForeignMarkup()) {
-          if (element.getName() == "author") {
-            System.out.println(element.getText());
-          }
-        }
-
-//        for (final Iterator iter = feed.getEntries().iterator();
-//             iter.hasNext(); ) {
-//          final SyndEntry entry = (SyndEntry) iter.next();
-//          System.out.println(entry.getTitle());
-//          System.out.println(entry.getUri());
-//        }
       } catch (IOException e) {
         throw new RuntimeException(e);
       } catch (com.rometools.rome.io.FeedException e) {
@@ -50,5 +39,19 @@ public class FeedFetcher {
 
   public String getAuthor () {
     return feed.getAuthor();
+  }
+
+  public String getForeignElementValue (String el) {
+    for (Element element : feed.getForeignMarkup()) {
+      if (element.getName() == el) {
+        return element.getText();
+      }
+    }
+
+    return "N/A";
+  }
+
+  public List<SyndEntry> getEntries () {
+    return feed.getEntries();
   }
 }

@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import javax.lang.model.type.NullType;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 import static org.junit.matchers.JUnitMatchers.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -56,6 +58,18 @@ public class iTunesFeedTest {
 
   @Test
   public void getAllEpisodes () throws Exception {
+    List<String> episodes;
+    feed = new iTunesFeed("http://historyofrome.libsyn.com/rss/");
+    episodes = feed.getAllEpisodes();
+    assertThat(episodes.get(0), equalTo("The Storm Before The Storm: Chapter 1- The Beasts of Italy"));
+    assertThat(episodes.get(1), equalTo("Revolutions Launch"));
+    assertThat(episodes.get(2), equalTo("Update- One Year Later"));
+
+    feed = new iTunesFeed("https://rss.art19.com/levar-burton-reads");
+    episodes = feed.getAllEpisodes();
+    assertThat(episodes.get(0), equalTo("Episode 7: \"Chivalry\" by Neil Gaiman"));
+    assertThat(episodes.get(1), equalTo("Episode 6: \"Graham Greene\" by Percival Everett"));
+    assertThat(episodes.get(2), equalTo("Episode 5: \"What It Means When a Man Falls From the Sky\" by Lesley Nneka Arimah"));
   }
 
 }
