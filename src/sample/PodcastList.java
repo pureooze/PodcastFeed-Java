@@ -45,9 +45,6 @@ public class PodcastList extends AnchorPane implements Initializable {
     podcastListHeader.setTooltip(new Tooltip("Hello!"));
     podcastListHeader.getTooltip().setFont(new Font(11));
 
-//    iTunesFeed feed = new iTunesFeed("http://historyofrome.libsyn.com/rss/");
-//    podcastNameList.add(feed.getTitle());
-
     podcastList.itemsProperty().bind(listProperty);
     listProperty.set(FXCollections.observableArrayList(podcastNameList));
 
@@ -69,5 +66,16 @@ public class PodcastList extends AnchorPane implements Initializable {
   @FXML
   private void doSomething () {
     System.out.println("The button was clicked!");
+  }
+
+  public void addiTunesPodcast (String URL) {
+    iTunesFeed feed = new iTunesFeed(URL);
+    podcastNameList.add(feed.getTitle());
+    podcastList.itemsProperty().bind(listProperty);
+    listProperty.set(FXCollections.observableArrayList(podcastNameList));
+  }
+
+  public List<String> getPodcastNameList () {
+    return podcastNameList;
   }
 }

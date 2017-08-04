@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
 <iTunes>
     <podcast>
-        <title>History of Rome</title>
-        <url>http://historyofrome.libsyn.com/rss/</url>
-    </podcast>
-    <podcast>
         <title>Levar Burton Reads</title>
         <url>https://rss.art19.com/levar-burton-reads</url>
     </podcast>
