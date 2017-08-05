@@ -12,12 +12,13 @@
 
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-    <MenuBar>
+      xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller"
+      fx:id="mainVBox">
+    <MenuBar fx:id="menuBar">
         <menus>
-            <Menu text="File">
+            <Menu text="File" fx:id="menuBarFile">
                 <items>
-                    <MenuItem text="New" onAction="#showAddPodcastDialog"/>
+                    <MenuItem text="New" onAction="#showAddPodcastDialog" fx:id="menuBarFileNew"/>
                     <MenuItem text="Open"/>
                     <MenuItem text="Save"/>
                     <MenuItem text="Save As"/>
@@ -29,7 +30,7 @@
     </MenuBar>
     <SplitPane prefHeight="600.0" prefWidth="900.0">
         <items>
-            <PodcastList layoutX="32.0" layoutY="54.0" prefHeight="598.0" prefWidth="264.0"
+            <PodcastList fx:id="podcastList" layoutX="32.0" layoutY="54.0" prefHeight="598.0" prefWidth="264.0"
                          AnchorPane.bottomAnchor="0.0"
                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"/>
