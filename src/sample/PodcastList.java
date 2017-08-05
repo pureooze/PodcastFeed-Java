@@ -29,14 +29,14 @@ public class PodcastList extends AnchorPane implements Initializable {
   private List<String> podcastNameList = new ArrayList<>();
   private ListProperty<String> listProperty = new SimpleListProperty<>();
 
-  private PodcastListData podcastData;
+  private PodcastListLoader podcastData;
 
   @Override
   public void initialize (URL url, ResourceBundle rb) {
-    podcastData = new PodcastListData("data/PodcastListData");
+    podcastData = new PodcastListLoader("data/PodcastListLoader");
 
-    List<PodcastListItem> iTunesList = podcastData.getITunesData();
-    for (PodcastListItem item : iTunesList) {
+    List<PodcastProperties> iTunesList = podcastData.getITunesData();
+    for (PodcastProperties item : iTunesList) {
       podcastNameList.add(item.getTitle());
     }
 
@@ -70,9 +70,14 @@ public class PodcastList extends AnchorPane implements Initializable {
 
   public void addiTunesPodcast (String URL) {
     iTunesFeed feed = new iTunesFeed(URL);
+    saveFeedToLocalConfig(feed, "iTunes.json");
     podcastNameList.add(feed.getTitle());
     podcastList.itemsProperty().bind(listProperty);
     listProperty.set(FXCollections.observableArrayList(podcastNameList));
+  }
+
+  private void saveFeedToLocalConfig (rssFeed feed, String fileName) {
+    podcastData.updateLocalPodcastData(feed, fileName);
   }
 
   public List<String> getPodcastNameList () {
