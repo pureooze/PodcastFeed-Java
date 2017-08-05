@@ -84,7 +84,7 @@ public class MainTest extends ApplicationTest {
   }
 
   @Test
-  public void testOnUserClickCanceliTunesPodcastPopup () throws Exception {
+  public void testOn_UserClick_CanceliTunesPodcastPopup () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
     podcastNameList.add("History of Rome");
     podcastNameList.add("Levar Burton Reads");
@@ -98,7 +98,7 @@ public class MainTest extends ApplicationTest {
   }
 
   @Test
-  public void testOnUserClickAddiTunesPodcastPopup () throws Exception {
+  public void testOn_UserClick_AddiTunesPodcastPopup () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
     podcastNameList.add("History of Rome");
     podcastNameList.add("Levar Burton Reads");
@@ -107,6 +107,20 @@ public class MainTest extends ApplicationTest {
     clickOn("#menuBarFile").clickOn("#menuBarFileNew");
     clickOn(500, 300);
     write("https://feeds.soundcloud.com/users/soundcloud:users:63303345/sounds.rss");
+    clickOn(900, 375);
+    ListView list = (ListView) GuiTest.find("#mainVBox #podcastList");
+    assertThat(list.getItems().toString(), equalTo(podcastNameList.toString()));
+  }
+
+  @Test
+  public void testOn_UserClick_AddiTunesPodcastPopup_WithDuplicateEntry () throws Exception {
+    List<String> podcastNameList = new ArrayList<>();
+    podcastNameList.add("History of Rome");
+    podcastNameList.add("Levar Burton Reads");
+
+    clickOn("#menuBarFile").clickOn("#menuBarFileNew");
+    clickOn(500, 300);
+    write("http://historyofrome.libsyn.com/rss/");
     clickOn(900, 375);
     ListView list = (ListView) GuiTest.find("#mainVBox #podcastList");
     assertThat(list.getItems().toString(), equalTo(podcastNameList.toString()));
