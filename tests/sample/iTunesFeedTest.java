@@ -67,9 +67,9 @@ public class iTunesFeedTest {
 
     feed = new iTunesFeed("https://rss.art19.com/levar-burton-reads");
     episodes = feed.getAllEpisodes();
-    assertThat(episodes.get(0), equalTo("Episode 7: \"Chivalry\" by Neil Gaiman"));
-    assertThat(episodes.get(1), equalTo("Episode 6: \"Graham Greene\" by Percival Everett"));
-    assertThat(episodes.get(2), equalTo("Episode 5: \"What It Means When a Man Falls From the Sky\" by Lesley Nneka Arimah"));
+    assertThat(episodes.get(episodes.size() - 1), equalTo("Introducing… LeVar Burton Reads"));
+    assertThat(episodes.get(episodes.size() - 2), equalTo("Episode 1: \"Kin\" by Bruce McAllister"));
+    assertThat(episodes.get(episodes.size() - 3), equalTo("Episode 2: \"The Lighthouse Keeper\" by Daisy Johnson"));
   }
 
 }

@@ -1,5 +1,8 @@
 package sample;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -15,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.hamcrest.Matchers;
 import org.hamcrest.core.IsNot;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -27,6 +31,8 @@ import static org.junit.matchers.JUnitMatchers.*;
 import static org.hamcrest.CoreMatchers.*;
 
 
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -46,7 +52,9 @@ import org.loadui.testfx.controls.impl.VisibleNodesMatcher;
 
 public class MainTest extends ApplicationTest {
 
-  Stage testStage;
+  private Stage testStage;
+  private Gson gson;
+  private PodcastListEntry podcastEntry;
 
   @BeforeClass
   public static void setUpClass () throws Exception {
@@ -59,15 +67,31 @@ public class MainTest extends ApplicationTest {
     testStage.show();
   }
 
+  @Before
+  public void setUp () throws Exception {
+    gson = new Gson();
+    JsonReader reader = new JsonReader(new FileReader("data/PodcastListLoader/iTunes.json"));
+    podcastEntry = gson.fromJson(reader, PodcastListEntry.class);
+  }
+
+  @After
+  public void tearDown () throws Exception {
+    gson = new GsonBuilder().setPrettyPrinting().create();
+    String json = gson.toJson(podcastEntry);
+    FileWriter writer = new FileWriter("data/PodcastListLoader/iTunes.json");
+    writer.write(json);
+    writer.close();
+  }
+
   @Test
   public void testOnUserClickCanceliTunesPodcastPopup () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
+    podcastNameList.add("History of Rome");
     podcastNameList.add("Levar Burton Reads");
-    podcastNameList.add("OWASP 24/7");
 
     clickOn("#menuBarFile").clickOn("#menuBarFileNew");
     clickOn(500, 300);
-    write("http://historyofrome.libsyn.com/rss/");
+    write("https://feeds.soundcloud.com/users/soundcloud:users:63303345/sounds.rss");
     clickOn(800, 375);
     ListView list = (ListView) GuiTest.find("#mainVBox #podcastList");
     assertThat(list.getItems().toString(), equalTo(podcastNameList.toString()));
@@ -76,13 +100,13 @@ public class MainTest extends ApplicationTest {
   @Test
   public void testOnUserClickAddiTunesPodcastPopup () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
+    podcastNameList.add("History of Rome");
     podcastNameList.add("Levar Burton Reads");
     podcastNameList.add("OWASP 24/7");
-    podcastNameList.add("The History of Rome");
 
     clickOn("#menuBarFile").clickOn("#menuBarFileNew");
     clickOn(500, 300);
-    write("http://historyofrome.libsyn.com/rss/");
+    write("https://feeds.soundcloud.com/users/soundcloud:users:63303345/sounds.rss");
     clickOn(900, 375);
     ListView list = (ListView) GuiTest.find("#mainVBox #podcastList");
     assertThat(list.getItems().toString(), equalTo(podcastNameList.toString()));

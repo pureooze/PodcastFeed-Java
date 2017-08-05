@@ -18,9 +18,4 @@ public class ControllerTest {
   public void testControllerTest () {
     assertEquals(true, ctrl.ControllerTest());
   }
-
-  @Test
-  public void showAddPodcastDialog () {
-    assertThat("abc", equalTo(true));
-  }
 }

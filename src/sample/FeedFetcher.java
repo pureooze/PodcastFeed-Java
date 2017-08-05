@@ -16,7 +16,6 @@ public class FeedFetcher {
   private SyndFeed feed;
 
   public FeedFetcher (String rssURL) {
-    System.out.println(rssURL);
     try {
       targetURL = new URL(rssURL);
       SyndFeedInput input = new SyndFeedInput();
