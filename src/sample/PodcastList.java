@@ -4,12 +4,14 @@ package sample;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 
@@ -45,6 +47,39 @@ public class PodcastList extends AnchorPane implements Initializable {
     podcastListHeader.setTooltip(new Tooltip("Hello!"));
     podcastListHeader.getTooltip().setFont(new Font(11));
 
+
+    // Create ContextMenu
+    ContextMenu contextMenu = new ContextMenu();
+
+    MenuItem removePodcastItem = new MenuItem("Remove");
+    removePodcastItem.setOnAction(new EventHandler<ActionEvent>() {
+
+      @Override
+      public void handle (ActionEvent event) {
+        removePodcastEntry(podcastList.getSelectionModel().getSelectedIndices());
+      }
+    });
+
+    contextMenu.getItems().addAll(removePodcastItem);
+
+    podcastList.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+      @Override
+      public void handle (ContextMenuEvent event) {
+        contextMenu.show(podcastList, event.getScreenX(), event.getScreenY());
+      }
+    });
+
+    podcastList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    podcastList.itemsProperty().bind(listProperty);
+    listProperty.set(FXCollections.observableArrayList(podcastNameList));
+
+  }
+
+  private void removePodcastEntry (ObservableList selectedIndices) {
+    for (Object index : selectedIndices) {
+      podcastData.removePodcastEntry((int) index);
+      podcastNameList.remove((int) index);
+    }
     podcastList.itemsProperty().bind(listProperty);
     listProperty.set(FXCollections.observableArrayList(podcastNameList));
 
@@ -63,11 +98,6 @@ public class PodcastList extends AnchorPane implements Initializable {
     }
   }
 
-  @FXML
-  private void doSomething () {
-    System.out.println("The button was clicked!");
-  }
-
   public void addiTunesPodcast (String URL) {
     iTunesFeed feed = new iTunesFeed(URL);
     saveFeedToLocalConfig(feed, "iTunes.json");
@@ -77,7 +107,7 @@ public class PodcastList extends AnchorPane implements Initializable {
   }
 
   private void saveFeedToLocalConfig (rssFeed feed, String fileName) {
-    podcastData.updateLocalPodcastData(feed, fileName);
+    podcastData.addPodcastEntry(feed);
   }
 
   public List<String> getPodcastNameList () {

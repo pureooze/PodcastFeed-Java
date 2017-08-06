@@ -16,4 +16,8 @@ public class PodcastListEntry {
     prop.setEpisodeList(episodes);
     podcasts.add(prop);
   }
+
+  public void removePodcast (int index) {
+    podcasts.remove(index);
+  }
 }

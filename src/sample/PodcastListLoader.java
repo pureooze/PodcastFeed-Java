@@ -7,28 +7,27 @@ import com.google.gson.stream.JsonReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class PodcastListLoader {
   private List<PodcastProperties> iTunesData;
   private PodcastListEntry podcastEntry;
   private String configPath;
+  private String iTunesFile;
 
   public PodcastListLoader (String configPath) {
     this.configPath = configPath;
     iTunesData = new ArrayList<>();
     podcastEntry = new PodcastListEntry();
+    iTunesFile = "iTunes.json";
     loadSavedPodcasts();
   }
 
   private void loadSavedPodcasts () {
-    loadLocalPodcastJSON(iTunesData, "iTunes.json");
+    loadLocalPodcastJSON(iTunesData, iTunesFile);
   }
 
-  //TODO: ADD EPISODES TO JSON
   private void loadLocalPodcastJSON (List<PodcastProperties> dataList, String fileName) {
     try {
       Gson gson = new Gson();
@@ -48,9 +47,12 @@ public class PodcastListLoader {
     return iTunesData;
   }
 
-  public void updateLocalPodcastData (rssFeed feed, String fileName) {
+  public void addPodcastEntry (rssFeed feed) {
     podcastEntry.addPodcast(feed.getTitle(), feed.getURL(), feed.getAllEpisodes());
+    updateLocalPodcastData(iTunesFile);
+  }
 
+  public void updateLocalPodcastData (String fileName) {
     try {
       Gson gson = new Gson();
       gson = new GsonBuilder().setPrettyPrinting().create();
@@ -61,5 +63,10 @@ public class PodcastListLoader {
     } catch (IOException e) {
       System.out.println("Error writing to file '" + configPath + "/" + fileName);
     }
+  }
+
+  public void removePodcastEntry (int index) {
+    podcastEntry.removePodcast(index);
+    updateLocalPodcastData(iTunesFile);
   }
 }
