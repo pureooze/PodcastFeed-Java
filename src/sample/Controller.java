@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,6 +48,11 @@ public class Controller {
   }
 
   public void populatePodcasts () {
+  }
+
+  @FXML
+  public void closeApplication () throws Exception {
+    Platform.exit();
   }
 
   @FXML
