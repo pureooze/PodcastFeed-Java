@@ -35,13 +35,6 @@ public class PodcastList extends AnchorPane implements Initializable {
 
   @Override
   public void initialize (URL url, ResourceBundle rb) {
-    podcastData = new PodcastListLoader("data/PodcastListLoader");
-
-    List<PodcastProperties> iTunesList = podcastData.getITunesData();
-    for (PodcastProperties item : iTunesList) {
-      podcastNameList.add(item.getTitle());
-    }
-
     podcastListHeader.setText("Podcasts");
     podcastListHeader.setFont(new Font("Droid Sans", 14));
     podcastListHeader.setTooltip(new Tooltip("Hello!"));
@@ -70,8 +63,7 @@ public class PodcastList extends AnchorPane implements Initializable {
     });
 
     podcastList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-    podcastList.itemsProperty().bind(listProperty);
-    listProperty.set(FXCollections.observableArrayList(podcastNameList));
+    loadPodcastList();
 
   }
 
@@ -80,8 +72,7 @@ public class PodcastList extends AnchorPane implements Initializable {
       podcastData.removePodcastEntry((int) index);
       podcastNameList.remove((int) index);
     }
-    podcastList.itemsProperty().bind(listProperty);
-    listProperty.set(FXCollections.observableArrayList(podcastNameList));
+    refreshList();
 
   }
 
@@ -101,9 +92,15 @@ public class PodcastList extends AnchorPane implements Initializable {
   public void addiTunesPodcast (String URL) {
     iTunesFeed feed = new iTunesFeed(URL);
     saveFeedToLocalConfig(feed, "iTunes.json");
+
+    for (String name : podcastNameList) {
+      if (feed.getTitle().equals(name)) {
+        return;
+      }
+    }
+
     podcastNameList.add(feed.getTitle());
-    podcastList.itemsProperty().bind(listProperty);
-    listProperty.set(FXCollections.observableArrayList(podcastNameList));
+    refreshList();
   }
 
   private void saveFeedToLocalConfig (rssFeed feed, String fileName) {
@@ -112,5 +109,21 @@ public class PodcastList extends AnchorPane implements Initializable {
 
   public List<String> getPodcastNameList () {
     return podcastNameList;
+  }
+
+  public void loadPodcastList () {
+    podcastData = new PodcastListLoader("data/PodcastListLoader");
+
+    List<PodcastProperties> iTunesList = podcastData.getITunesData();
+    for (PodcastProperties item : iTunesList) {
+      podcastNameList.add(item.getTitle());
+    }
+
+    refreshList();
+  }
+
+  private void refreshList () {
+    podcastList.itemsProperty().bind(listProperty);
+    listProperty.set(FXCollections.observableArrayList(podcastNameList));
   }
 }

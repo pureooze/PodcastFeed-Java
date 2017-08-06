@@ -3,9 +3,11 @@ package sample;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
+import javafx.application.Application;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,6 +16,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.hamcrest.Matchers;
@@ -23,6 +26,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.loadui.testfx.GuiTest;
+import org.testfx.api.FxToolkit;
 import org.testfx.framework.junit.ApplicationTest;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -52,19 +56,17 @@ import org.loadui.testfx.controls.impl.VisibleNodesMatcher;
 
 public class MainTest extends ApplicationTest {
 
-  private Stage testStage;
   private Gson gson;
   private PodcastListEntry podcastEntry;
+  Parent mainNode;
 
-  @BeforeClass
-  public static void setUpClass () throws Exception {
-    ApplicationTest.launch(Main.class);
-  }
 
   @Override
-  public void start (Stage stage) {
-    testStage = stage;
-    testStage.show();
+  public void start (Stage stage) throws Exception {
+    mainNode = FXMLLoader.load(Main.class.getResource("sample.fxml"));
+    stage.setScene(new Scene(mainNode));
+    stage.show();
+    stage.toFront();
   }
 
   @Before
@@ -81,12 +83,15 @@ public class MainTest extends ApplicationTest {
     FileWriter writer = new FileWriter("data/PodcastListLoader/iTunes.json");
     writer.write(json);
     writer.close();
+    FxToolkit.hideStage();
+    release(new KeyCode[]{});
+    release(new MouseButton[]{});
   }
 
   @Test
   public void testOn_UserClick_CanceliTunesPodcastPopup () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
-    podcastNameList.add("History of Rome");
+    podcastNameList.add("The History of Rome");
     podcastNameList.add("Levar Burton Reads");
 
     clickOn("#menuBarFile").clickOn("#menuBarFileNew");
@@ -100,7 +105,7 @@ public class MainTest extends ApplicationTest {
   @Test
   public void testOn_UserClick_AddiTunesPodcastPopup () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
-    podcastNameList.add("History of Rome");
+    podcastNameList.add("The History of Rome");
     podcastNameList.add("Levar Burton Reads");
     podcastNameList.add("OWASP 24/7");
 
@@ -115,7 +120,7 @@ public class MainTest extends ApplicationTest {
   @Test
   public void testOn_UserClick_AddiTunesPodcastPopup_WithDuplicateEntry () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
-    podcastNameList.add("History of Rome");
+    podcastNameList.add("The History of Rome");
     podcastNameList.add("Levar Burton Reads");
 
     clickOn("#menuBarFile").clickOn("#menuBarFileNew");
