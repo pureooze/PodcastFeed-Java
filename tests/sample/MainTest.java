@@ -91,7 +91,7 @@ public class MainTest extends ApplicationTest {
   public void testOn_UserClick_CanceliTunesPodcastPopup () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
     podcastNameList.add("The History of Rome");
-    podcastNameList.add("Levar Burton Reads");
+    podcastNameList.add("LeVar Burton Reads");
 
     clickOn("#menuBarFile").clickOn("#menuBarFileNew");
     clickOn(500, 300);
@@ -105,7 +105,7 @@ public class MainTest extends ApplicationTest {
   public void testOn_UserClick_AddiTunesPodcastPopup () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
     podcastNameList.add("The History of Rome");
-    podcastNameList.add("Levar Burton Reads");
+    podcastNameList.add("LeVar Burton Reads");
     podcastNameList.add("OWASP 24/7");
 
     clickOn("#menuBarFile").clickOn("#menuBarFileNew");
@@ -120,7 +120,7 @@ public class MainTest extends ApplicationTest {
   public void testOn_UserClick_AddiTunesPodcastPopup_WithDuplicateEntry () throws Exception {
     List<String> podcastNameList = new ArrayList<>();
     podcastNameList.add("The History of Rome");
-    podcastNameList.add("Levar Burton Reads");
+    podcastNameList.add("LeVar Burton Reads");
 
     clickOn("#menuBarFile").clickOn("#menuBarFileNew");
     clickOn(500, 300);
