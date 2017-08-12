@@ -9,7 +9,3 @@ jobs:
       script: mvn -q install
     - jdk: oraclejdk8
       script: mvn -q install
-
-branches:
-  only:
-  - master
