@@ -30,4 +30,8 @@ public class PodcastProperties {
   public void setEpisodeList (List<String> episodes) {
     episodeList = episodes;
   }
+
+  public List<String> getEpisodeList () {
+    return episodeList;
+  }
 }

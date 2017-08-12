@@ -1,0 +1,9 @@
+#mainSplitPane:horizontal > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+.noheader .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}

@@ -20,4 +20,8 @@ public class PodcastListEntry {
   public void removePodcast (int index) {
     podcasts.remove(index);
   }
+
+  public List<String> getEpisodes (int podcastIndex) {
+    return podcasts.get(podcastIndex).getEpisodeList();
+  }
 }

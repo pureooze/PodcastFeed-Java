@@ -3,7 +3,10 @@ package sample;
 
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,9 +35,11 @@ public class PodcastList extends AnchorPane implements Initializable {
   private ListProperty<String> listProperty = new SimpleListProperty<>();
 
   private PodcastListLoader podcastData;
+  private List<String> episodesList;
 
   @Override
   public void initialize (URL url, ResourceBundle rb) {
+    episodesList = new ArrayList<String>();
     podcastListHeader.setText("Podcasts");
     podcastListHeader.setFont(new Font("Droid Sans", 14));
     podcastListHeader.setTooltip(new Tooltip("Hello!"));
@@ -63,7 +68,15 @@ public class PodcastList extends AnchorPane implements Initializable {
     });
 
     podcastList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    podcastList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+      @Override
+      public void changed (ObservableValue observable, Object oldValue, Object newValue) {
+        episodesList = getEpisodes(podcastList.getSelectionModel().getSelectedIndex());
+      }
+    });
+
     loadPodcastList();
+    podcastList.getSelectionModel().selectFirst();
 
   }
 
@@ -125,5 +138,13 @@ public class PodcastList extends AnchorPane implements Initializable {
   private void refreshList () {
     podcastList.itemsProperty().bind(listProperty);
     listProperty.set(FXCollections.observableArrayList(podcastNameList));
+  }
+
+  private List<String> getEpisodes (int podcastIndex) {
+    return podcastData.getEpisodeList(podcastIndex);
+  }
+
+  public List<String> getEpisodesForCurrentPodcast () {
+    return episodesList;
   }
 }

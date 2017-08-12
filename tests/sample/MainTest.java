@@ -7,14 +7,12 @@ import javafx.application.Application;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.VBox;
@@ -39,6 +37,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
@@ -129,5 +128,42 @@ public class MainTest extends ApplicationTest {
     clickOn(900, 375);
     ListView list = (ListView) GuiTest.find("#mainVBox #podcastList");
     assertThat(list.getItems().toString(), equalTo(podcastNameList.toString()));
+  }
+
+  //EPISODE LIST TESTS
+  @Test
+  public void testOn_Startup_Is_EpisodeList_Empty () throws Exception {
+    List<String> emptyList = new ArrayList<String>();
+    TableView table = (TableView) GuiTest.find("#mainVBox #episodeList");
+    assertThat(table.getItems().toString(), equalTo(emptyList.toString()));
+  }
+
+  @Test
+  public void testOn_User_Click_Podcast_Display_Episodes () throws Exception {
+    List<String> episodes = new ArrayList<String>();
+    List<Integer> selectedIndicies = new ArrayList<Integer>();
+    List<Integer> mockIndicies = new ArrayList<Integer>();
+    List<String> currentPodcast = new ArrayList<>();
+    List<String> mockCurrentPodcast = new ArrayList<>();
+
+    mockIndicies.add(0);
+    mockCurrentPodcast.add("The History of Rome");
+    episodes.add("The Storm Before The Storm: Chapter 1- The Beasts of Italy");
+    episodes.add("001- In the Beginning");
+
+    ListView list = (ListView) GuiTest.find("#mainVBox #podcastList");
+    list.getSelectionModel().selectFirst();
+    selectedIndicies = list.getSelectionModel().getSelectedIndices();
+    currentPodcast = list.getSelectionModel().getSelectedItems();
+    assertThat(selectedIndicies.toString(), equalTo(mockIndicies.toString()));
+    assertThat(currentPodcast.toString(), equalTo(mockCurrentPodcast.toString()));
+
+    TableView table = (TableView) GuiTest.find("#mainVBox #episodeList");
+    int episodeCount = table.getItems().size() - 1;
+
+    episodeListEntry firstEntry = (episodeListEntry) table.getItems().get(0);
+    episodeListEntry lastEntry = (episodeListEntry) table.getItems().get(episodeCount);
+    assertThat(firstEntry.getName(), equalTo(episodes.get(0).toString()));
+    assertThat(lastEntry.getName(), equalTo(episodes.get(1).toString()));
   }
 }
