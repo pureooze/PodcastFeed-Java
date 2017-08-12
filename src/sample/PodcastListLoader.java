@@ -69,4 +69,8 @@ public class PodcastListLoader {
     podcastEntry.removePodcast(index);
     updateLocalPodcastData(iTunesFile);
   }
+
+  public List<String> getEpisodeList (int podcastIndex) {
+    return podcastEntry.getEpisodes(podcastIndex);
+  }
 }

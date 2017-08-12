@@ -1,32 +1,28 @@
 package sample;
 
+
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-import javafx.stage.WindowEvent;
-import javafx.util.Pair;
 
-import java.awt.event.ActionEvent;
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class Controller {
+public class Controller implements Initializable {
 
   @FXML
   private GridPane PodcastListPane;
 
   @FXML
   private PodcastList podcastList;
+
+  @FXML
+  private EpisodeList episodeList;
 
   @FXML
   private Dialog<String> dialog;
@@ -39,6 +35,11 @@ public class Controller {
   private GridPane grid;
   @FXML
   private TextField podcastURL;
+
+  @Override
+  public void initialize (URL url, ResourceBundle rb) {
+    episodeList.setEpisodes(podcastList.getEpisodesForCurrentPodcast());
+  }
 
   public Controller () {
   }
@@ -64,7 +65,7 @@ public class Controller {
   private Optional<String> displayDialogBox () {
     // Create the Dialog Window
     dialog = new Dialog<>();
-    dialog.setTitle("Add iTunes Podcast");
+    dialog.setTitle("Add Podcast");
     dialog.setHeaderText(null);
 
     // Creates the "Add" button
@@ -84,7 +85,7 @@ public class Controller {
     podcastURL = new TextField();
     podcastURL.setPromptText("http://example.com/rss");
     podcastURL.setPrefColumnCount(40);
-    grid.add(new Label("URL:"), 0, 0);
+    grid.add(new Label("Enter Podcast URL:"), 0, 0);
     grid.add(podcastURL, 0, 1);
 
     // Set add button to disabled on initialization so user cannot submit empty strings
