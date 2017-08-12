@@ -76,7 +76,6 @@ public class PodcastList extends AnchorPane implements Initializable {
     });
 
     loadPodcastList();
-    podcastList.getSelectionModel().selectFirst();
 
   }
 

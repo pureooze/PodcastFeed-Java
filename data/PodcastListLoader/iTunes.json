@@ -199,8 +199,20 @@
       ]
     },
     {
-      "title": "Levar Burton Reads",
-      "URL": "https://rss.art19.com/levar-burton-reads"
+      "title": "LeVar Burton Reads",
+      "URL": "https://rss.art19.com/levar-burton-reads",
+      "episodeList": [
+        "Bonus Episode: A Conversation with Lesley Nneka Arimah",
+        "Episode 8: \"The Second Bakery Attack\" by Haruki Murakami",
+        "Episode 7: \"Chivalry\" by Neil Gaiman",
+        "Episode 6: \"Graham Greene\" by Percival Everett",
+        "Episode 5: \"What It Means When a Man Falls From the Sky\" by Lesley Nneka Arimah",
+        "Episode 4: \"Empty Places\" Part Two by Richard Parks",
+        "Episode 3: \"Empty Places\" Part One by Richard Parks",
+        "Episode 2: \"The Lighthouse Keeper\" by Daisy Johnson",
+        "Episode 1: \"Kin\" by Bruce McAllister",
+        "Introducing… LeVar Burton Reads"
+      ]
     }
   ]
 }
