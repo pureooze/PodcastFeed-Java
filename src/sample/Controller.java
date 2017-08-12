@@ -2,14 +2,18 @@ package sample;
 
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -38,7 +42,14 @@ public class Controller implements Initializable {
 
   @Override
   public void initialize (URL url, ResourceBundle rb) {
-    episodeList.setEpisodes(podcastList.getEpisodesForCurrentPodcast());
+    VBox vbox = (VBox) podcastList.getChildren().get(0);
+    ListView<String> podcasts = (ListView<String>) vbox.getChildren().get(1);
+    podcasts.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+      @Override
+      public void changed (ObservableValue<? extends String> observable, String oldValue, String newValue) {
+        episodeList.setEpisodes(podcastList.getEpisodesForCurrentPodcast());
+      }
+    });
   }
 
   public Controller () {

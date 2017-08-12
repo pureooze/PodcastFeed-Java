@@ -65,6 +65,7 @@ public class EpisodeList extends AnchorPane implements Initializable {
   }
 
   public void setEpisodes (List<String> episodes) {
+    episodeListContents.clear();
 
     for (String name : episodes) {
       episodeListContents.add(new episodeListEntry(name));
