@@ -1,12 +1,824 @@
 {
   "podcasts": [
     {
-      "title": "History of Rome",
-      "URL": "http://historyofrome.libsyn.com/rss/"
+      "title": "The History of Rome",
+      "URL": "http://historyofrome.libsyn.com/rss/",
+      "episodeList": [
+        {
+          "name": "The Storm Before The Storm: Chapter 1- The Beasts of Italy",
+          "date": "Thu Jul 27 07:30:00 EDT 2017"
+        },
+        {
+          "name": "Revolutions Launch",
+          "date": "Mon Sep 16 11:39:57 EDT 2013"
+        },
+        {
+          "name": "Update- One Year Later",
+          "date": "Thu May 30 11:18:57 EDT 2013"
+        },
+        {
+          "name": "179- The End",
+          "date": "Sun May 06 14:18:38 EDT 2012"
+        },
+        {
+          "name": "178- Not With A Bang But A Whimper",
+          "date": "Mon Apr 30 00:00:52 EDT 2012"
+        },
+        {
+          "name": "177- The Burning Ships",
+          "date": "Sun Apr 22 14:54:47 EDT 2012"
+        },
+        {
+          "name": "176- The Quote Unquote Emperor",
+          "date": "Mon Apr 16 00:29:27 EDT 2012"
+        },
+        {
+          "name": "175- Trying to Take It All Back",
+          "date": "Sun Apr 08 20:35:31 EDT 2012"
+        },
+        {
+          "name": "174- The Sack of Rome Part II",
+          "date": "Sun Apr 01 20:27:42 EDT 2012"
+        },
+        {
+          "name": "173- The Broken Bow",
+          "date": "Sun Mar 25 14:54:47 EDT 2012"
+        },
+        {
+          "name": "172- Showdown",
+          "date": "Sun Mar 18 22:32:41 EDT 2012"
+        },
+        {
+          "name": "171- The Gathering Storm",
+          "date": "Sun Mar 11 14:45:04 EDT 2012"
+        },
+        {
+          "name": "170- Atilla Cometh",
+          "date": "Sun Feb 19 14:52:49 EST 2012"
+        },
+        {
+          "name": "169- Huns and Vandals and Goths, Oh My",
+          "date": "Sun Feb 12 14:54:52 EST 2012"
+        },
+        {
+          "name": "168- The Rise of Aetius",
+          "date": "Sun Feb 05 15:00:15 EST 2012"
+        },
+        {
+          "name": "167- Exploiting the Opportunity",
+          "date": "Sun Jan 29 14:41:12 EST 2012"
+        },
+        {
+          "name": "166- As Long As She\u0027s Nice To Look At",
+          "date": "Sun Jan 22 15:07:21 EST 2012"
+        },
+        {
+          "name": "165- Reviving the Roman Name",
+          "date": "Sun Jan 15 14:45:27 EST 2012"
+        },
+        {
+          "name": "164- The Sack of Rome",
+          "date": "Sun Jan 08 20:31:22 EST 2012"
+        },
+        {
+          "name": "163- Theodosius\u0027s Walls",
+          "date": "Sun Dec 18 14:24:35 EST 2011"
+        },
+        {
+          "name": "162- Opening the Floodgates",
+          "date": "Mon Dec 12 00:24:03 EST 2011"
+        },
+        {
+          "name": "161- The Swamps of Ravenna",
+          "date": "Sun Dec 04 21:05:00 EST 2011"
+        },
+        {
+          "name": "160- East vs. West",
+          "date": "Sun Nov 27 21:31:13 EST 2011"
+        },
+        {
+          "name": "159- The Divine Winds",
+          "date": "Sun Nov 20 20:53:33 EST 2011"
+        },
+        {
+          "name": "158- An Imperial Suicide",
+          "date": "Sun Nov 13 19:10:05 EST 2011"
+        },
+        {
+          "name": " 157- Only the Penitent Man Shall Pass",
+          "date": "Sun Oct 30 22:26:00 EDT 2011"
+        },
+        {
+          "name": "156- Jockeying for Position",
+          "date": "Sun Oct 23 20:49:00 EDT 2011"
+        },
+        {
+          "name": "155- The New Bishop of Milan",
+          "date": "Sun Oct 16 18:16:00 EDT 2011"
+        },
+        {
+          "name": "154- The Gothic War",
+          "date": "Mon Oct 10 00:37:07 EDT 2011"
+        },
+        {
+          "name": "153- Adrianople",
+          "date": "Sun Oct 02 13:48:00 EDT 2011"
+        },
+        {
+          "name": "152- The Storm Before the Storm",
+          "date": "Sun Sep 25 11:44:00 EDT 2011"
+        },
+        {
+          "name": "151- Bursting a Blood Vessel",
+          "date": "Sun Sep 11 15:35:00 EDT 2011"
+        },
+        {
+          "name": "150- The Perils of Mismanagement",
+          "date": "Sun Sep 04 15:03:39 EDT 2011"
+        },
+        {
+          "name": "149- The Great Conspiracy",
+          "date": "Sun Aug 28 20:45:00 EDT 2011"
+        },
+        {
+          "name": "148- The Cousin\u0027s Cousin",
+          "date": "Sun Aug 21 22:41:38 EDT 2011"
+        },
+        {
+          "name": "147- Capitulation",
+          "date": "Sun Aug 14 21:32:02 EDT 2011"
+        },
+        {
+          "name": "146- The Spear of Destiny",
+          "date": "Sun Aug 07 21:30:00 EDT 2011"
+        },
+        {
+          "name": "145- Julian the Apostate",
+          "date": "Sun Jul 31 17:40:00 EDT 2011"
+        },
+        {
+          "name": "144- The Road to Constantinople ",
+          "date": "Sun Jul 24 22:08:00 EDT 2011"
+        },
+        {
+          "name": "143- Julian the Pre-Apostate",
+          "date": "Sun Jul 10 15:20:00 EDT 2011"
+        },
+        {
+          "name": "142- You\u0027ve Earned It",
+          "date": "Mon Jul 04 02:34:00 EDT 2011"
+        },
+        {
+          "name": "141- Blood and Water",
+          "date": "Sun Jun 26 23:43:00 EDT 2011"
+        },
+        {
+          "name": "140- My Three Sons",
+          "date": "Mon Jun 20 00:28:22 EDT 2011"
+        },
+        {
+          "name": "139- Wash Away Your Sins",
+          "date": "Sun Jun 12 21:04:49 EDT 2011"
+        },
+        {
+          "name": "138- The New Rome",
+          "date": "Mon May 30 02:26:42 EDT 2011"
+        },
+        {
+          "name": "137- The Christian Emperor",
+          "date": "Sun May 15 10:52:00 EDT 2011"
+        },
+        {
+          "name": "136- Let This Be Our Final Battle",
+          "date": "Sun May 01 19:33:00 EDT 2011"
+        },
+        {
+          "name": "135- Brothers in Name Only",
+          "date": "Sun Apr 24 20:53:00 EDT 2011"
+        },
+        {
+          "name": "134- And Then There Were Two",
+          "date": "Sun Apr 17 20:13:27 EDT 2011"
+        },
+        {
+          "name": "133- The Milvian Bridge",
+          "date": "Sun Apr 10 21:25:00 EDT 2011"
+        },
+        {
+          "name": "132- In This Sign",
+          "date": "Sun Apr 03 22:50:45 EDT 2011"
+        },
+        {
+          "name": "131- The New Game in Town",
+          "date": "Sun Mar 27 22:45:01 EDT 2011"
+        },
+        {
+          "name": "130- Lost in Transition",
+          "date": "Sun Mar 13 21:59:00 EDT 2011"
+        },
+        {
+          "name": "129- Abdication",
+          "date": "Sun Mar 06 23:22:47 EST 2011"
+        },
+        {
+          "name": "128- The Great Persecution",
+          "date": "Sun Feb 27 21:52:00 EST 2011"
+        },
+        {
+          "name": "127- Commanding The Economy",
+          "date": "Sun Feb 20 19:56:04 EST 2011"
+        },
+        {
+          "name": "126- All The King\u0027s Men",
+          "date": "Sun Feb 13 22:47:14 EST 2011"
+        },
+        {
+          "name": "125- The Best Defence is a Good Defence",
+          "date": "Sun Feb 06 21:08:00 EST 2011"
+        },
+        {
+          "name": "124- The Tetrarchs at War",
+          "date": "Sun Jan 30 20:08:00 EST 2011"
+        },
+        {
+          "name": "123- The Tertrarchy",
+          "date": "Sun Jan 23 23:52:00 EST 2011"
+        },
+        {
+          "name": "122- Jupiter and Hercules",
+          "date": "Sun Jan 16 18:31:46 EST 2011"
+        },
+        {
+          "name": "121- Phase Three Complete",
+          "date": "Mon Jan 10 00:15:04 EST 2011"
+        },
+        {
+          "name": "120- Interregnum",
+          "date": "Sun Dec 19 23:48:51 EST 2010"
+        },
+        {
+          "name": "119- Restitutor Orbis",
+          "date": "Mon Dec 13 00:13:50 EST 2010"
+        },
+        {
+          "name": "118- The Palmyrene Wars",
+          "date": "Sun Dec 05 22:12:18 EST 2010"
+        },
+        {
+          "name": "117- Aurelian\u0027s Walls",
+          "date": "Sun Nov 28 22:28:00 EST 2010"
+        },
+        {
+          "name": "116- Here Come the Illyrians",
+          "date": "Mon Nov 22 01:00:09 EST 2010"
+        },
+        {
+          "name": "115- Phase Two Complete",
+          "date": "Sun Nov 07 22:22:01 EST 2010"
+        },
+        {
+          "name": "114- The Nadir of Our Fortunes",
+          "date": "Mon Nov 01 00:04:51 EDT 2010"
+        },
+        {
+          "name": "113- Three Empires",
+          "date": "Sun Oct 24 10:24:04 EDT 2010"
+        },
+        {
+          "name": "112- Captured Alive",
+          "date": "Sun Oct 17 23:38:00 EDT 2010"
+        },
+        {
+          "name": "111- Phase One Complete",
+          "date": "Sun Oct 03 23:32:00 EDT 2010"
+        },
+        {
+          "name": "110- A Gothic Horror",
+          "date": "Sun Sep 26 20:38:00 EDT 2010"
+        },
+        {
+          "name": "109- The New Millenium",
+          "date": "Sun Sep 19 20:04:32 EDT 2010"
+        },
+        {
+          "name": "108- Gordian\u0027s Knot",
+          "date": "Sun Sep 12 22:38:58 EDT 2010"
+        },
+        {
+          "name": "107- The Year of the Six Emperors",
+          "date": "Sun Aug 29 21:49:00 EDT 2010"
+        },
+        {
+          "name": "106- Barbarian at the Gate",
+          "date": "Sun Aug 22 22:50:30 EDT 2010"
+        },
+        {
+          "name": "105- The Last Princeps",
+          "date": "Mon Aug 16 00:11:31 EDT 2010"
+        },
+        {
+          "name": "104- Here Comes the Sun",
+          "date": "Sun Aug 08 22:05:50 EDT 2010"
+        },
+        {
+          "name": "103- The Equestrian",
+          "date": "Sun Aug 01 23:27:46 EDT 2010"
+        },
+        {
+          "name": "102- The Common Enemy of Mankind",
+          "date": "Sun Jul 25 22:09:17 EDT 2010"
+        },
+        {
+          "name": "101- And All Was of Little Value",
+          "date": "Mon Jul 19 00:01:49 EDT 2010"
+        },
+        {
+          "name": "100- Black and White and Severus All Over",
+          "date": "Sun Jun 27 13:35:06 EDT 2010"
+        },
+        {
+          "name": "099- What Evil Have I Done?",
+          "date": "Sun Jun 20 22:46:00 EDT 2010"
+        },
+        {
+          "name": "098- Purchasing Power",
+          "date": "Sun Jun 13 23:57:17 EDT 2010"
+        },
+        {
+          "name": "097- The Fall of Hercules",
+          "date": "Sun Jun 06 22:52:46 EDT 2010"
+        },
+        {
+          "name": "096- The Most Aptly Named Emperor",
+          "date": "Sun May 30 22:54:12 EDT 2010"
+        },
+        {
+          "name": "095- The Beginning of the End",
+          "date": "Mon May 24 01:02:53 EDT 2010"
+        },
+        {
+          "name": "094- Revolt and Meditations",
+          "date": "Sun May 16 22:31:50 EDT 2010"
+        },
+        {
+          "name": "093- The Marcomannic Wars",
+          "date": "Sun May 09 22:17:00 EDT 2010"
+        },
+        {
+          "name": "092- The Parthian War",
+          "date": "Sun Apr 25 23:59:40 EDT 2010"
+        },
+        {
+          "name": "091- Marcus and Lucius and the Parthians",
+          "date": "Sun Apr 18 22:58:26 EDT 2010"
+        },
+        {
+          "name": "090- The Hundredth Episode",
+          "date": "Mon Apr 12 13:52:03 EDT 2010"
+        },
+        {
+          "name": "089- Provincial Matters",
+          "date": "Mon Apr 05 02:11:00 EDT 2010"
+        },
+        {
+          "name": "088- A Day in the Life",
+          "date": "Mon Mar 22 01:26:00 EDT 2010"
+        },
+        {
+          "name": "087- Thinking and Feeling",
+          "date": "Mon Mar 15 01:40:49 EDT 2010"
+        },
+        {
+          "name": "086- Wealth and Class",
+          "date": "Sun Mar 07 23:44:00 EST 2010"
+        },
+        {
+          "name": "085- Antoninus the Dutiful",
+          "date": "Mon Mar 01 00:59:00 EST 2010"
+        },
+        {
+          "name": "084- Longing For Death",
+          "date": "Mon Mar 01 00:58:00 EST 2010"
+        },
+        {
+          "name": "083- May His Bones Be Crushed",
+          "date": "Mon Mar 01 00:57:00 EST 2010"
+        },
+        {
+          "name": "082- Hadrian\u0027s Walls",
+          "date": "Mon Mar 01 00:56:00 EST 2010"
+        },
+        {
+          "name": "081- The Greekling",
+          "date": "Mon Mar 01 00:55:00 EST 2010"
+        },
+        {
+          "name": "080- Optimus Trajan",
+          "date": "Mon Mar 01 00:54:00 EST 2010"
+        },
+        {
+          "name": "079- The Dacian Wars",
+          "date": "Mon Mar 01 00:53:00 EST 2010"
+        },
+        {
+          "name": "078- Imperial Stop Gap",
+          "date": "Mon Mar 01 00:52:00 EST 2010"
+        },
+        {
+          "name": "077- What Time is It?",
+          "date": "Mon Mar 01 00:51:00 EST 2010"
+        },
+        {
+          "name": "076- Mock Triumphs",
+          "date": "Mon Mar 01 00:50:00 EST 2010"
+        },
+        {
+          "name": "075- The Forgotten Son",
+          "date": "Mon Mar 01 00:49:00 EST 2010"
+        },
+        {
+          "name": "074- Friends I Have Wasted a Day",
+          "date": "Mon Mar 01 00:48:00 EST 2010"
+        },
+        {
+          "name": "073- The Only Man Who Improved",
+          "date": "Mon Mar 01 00:47:00 EST 2010"
+        },
+        {
+          "name": "072- Vitellius and Vespasian",
+          "date": "Mon Mar 01 00:46:00 EST 2010"
+        },
+        {
+          "name": "071- Otho and Vitellius",
+          "date": "Mon Mar 01 00:45:00 EST 2010"
+        },
+        {
+          "name": "070- Galba and Otho: The History of Rome",
+          "date": "Mon Mar 01 00:44:00 EST 2010"
+        },
+        {
+          "name": "069- As History of Rome Wedding",
+          "date": "Mon Mar 01 00:43:00 EST 2010"
+        },
+        {
+          "name": "068- Three Emperors",
+          "date": "Mon Mar 01 00:42:00 EST 2010"
+        },
+        {
+          "name": "067- What an Artist the World is Losing",
+          "date": "Mon Mar 01 00:41:00 EST 2010"
+        },
+        {
+          "name": "066- 666",
+          "date": "Mon Mar 01 00:40:00 EST 2010"
+        },
+        {
+          "name": "065- Burn It To The Ground",
+          "date": "Mon Mar 01 00:39:00 EST 2010"
+        },
+        {
+          "name": "064- Smite My Womb",
+          "date": "Mon Mar 01 00:38:00 EST 2010"
+        },
+        {
+          "name": "063- A Farewell to Claudius",
+          "date": "Mon Mar 01 00:37:00 EST 2010"
+        },
+        {
+          "name": "062- Take My Wife...Please",
+          "date": "Mon Mar 01 00:36:00 EST 2010"
+        },
+        {
+          "name": "061- What, me Claudius?",
+          "date": "Mon Mar 01 00:35:00 EST 2010"
+        },
+        {
+          "name": "060- No Better Slave, No Worse Master",
+          "date": "Mon Mar 01 00:34:00 EST 2010"
+        },
+        {
+          "name": "058- Partner of my Labors",
+          "date": "Mon Mar 01 00:32:00 EST 2010"
+        },
+        {
+          "name": "059- To the Tiber with Tiberius",
+          "date": "Mon Mar 01 00:32:00 EST 2010"
+        },
+        {
+          "name": "057- Germanicus",
+          "date": "Sat Feb 27 22:43:49 EST 2010"
+        },
+        {
+          "name": "056- The King is Dead, Long Live the King",
+          "date": "Sat Feb 27 22:38:49 EST 2010"
+        },
+        {
+          "name": "055- Teutoburg Nightmares",
+          "date": "Sat Feb 27 22:35:15 EST 2010"
+        },
+        {
+          "name": "054- All in the Family",
+          "date": "Sat Feb 27 22:29:42 EST 2010"
+        },
+        {
+          "name": "053- Reigning Supreme",
+          "date": "Sat Feb 27 22:18:37 EST 2010"
+        },
+        {
+          "name": "052- Caesar Augustus",
+          "date": "Sat Feb 27 22:14:26 EST 2010"
+        },
+        {
+          "name": "051- Actium",
+          "date": "Sat Feb 27 22:09:07 EST 2010"
+        },
+        {
+          "name": "050- The Donations of Alexandria",
+          "date": "Sat Feb 27 22:04:15 EST 2010"
+        },
+        {
+          "name": "049- Apollo and Dionysus",
+          "date": "Sat Feb 27 21:59:20 EST 2010"
+        },
+        {
+          "name": "048- The Second Triumvirate",
+          "date": "Sat Feb 27 21:54:18 EST 2010"
+        },
+        {
+          "name": "047- Octavius-Octavian",
+          "date": "Sat Feb 27 21:49:42 EST 2010"
+        },
+        {
+          "name": "046- Sic Semper Tyrannis",
+          "date": "Sat Feb 27 21:45:27 EST 2010"
+        },
+        {
+          "name": "045- The End of the War",
+          "date": "Sat Feb 27 21:41:25 EST 2010"
+        },
+        {
+          "name": "044- Caesar Triumphant",
+          "date": "Sat Feb 27 21:36:47 EST 2010"
+        },
+        {
+          "name": "043- Insert Well Known Idiom Here",
+          "date": "Sat Feb 27 21:31:00 EST 2010"
+        },
+        {
+          "name": "042- Meanwhile, Back in Rome",
+          "date": "Sat Feb 27 21:26:21 EST 2010"
+        },
+        {
+          "name": "041b- The Gallic Wars",
+          "date": "Sat Feb 27 21:22:04 EST 2010"
+        },
+        {
+          "name": "041a- The Gallic Wars",
+          "date": "Sat Feb 27 21:17:44 EST 2010"
+        },
+        {
+          "name": "040- In the Consulship of Julius and Caesar",
+          "date": "Sat Feb 27 21:08:15 EST 2010"
+        },
+        {
+          "name": "039- The Young Julius Caesar Chronicles",
+          "date": "Sat Feb 27 21:02:00 EST 2010"
+        },
+        {
+          "name": "038- The Catiline Conspiracy",
+          "date": "Sat Feb 27 20:58:00 EST 2010"
+        },
+        {
+          "name": "037- Go East Young Man",
+          "date": "Sat Feb 27 20:51:00 EST 2010"
+        },
+        {
+          "name": "036- I Am Spartacus!",
+          "date": "Sat Feb 27 20:47:00 EST 2010"
+        },
+        {
+          "name": "035- Crassus and Pompey",
+          "date": "Sat Feb 27 20:43:00 EST 2010"
+        },
+        {
+          "name": "034- No Greater Friend, No Worse Enemy",
+          "date": "Sat Feb 27 20:39:00 EST 2010"
+        },
+        {
+          "name": "033- Marius and Sulla",
+          "date": "Sat Feb 27 20:36:20 EST 2010"
+        },
+        {
+          "name": "032- The Social War",
+          "date": "Sat Feb 27 20:13:36 EST 2010"
+        },
+        {
+          "name": "031b- Marius",
+          "date": "Sat Feb 27 20:10:53 EST 2010"
+        },
+        {
+          "name": "031a- Marius",
+          "date": "Sat Feb 27 20:08:04 EST 2010"
+        },
+        {
+          "name": "030- Gaius Gracchus",
+          "date": "Sat Feb 27 20:05:09 EST 2010"
+        },
+        {
+          "name": "029- Tiberius Gracchus",
+          "date": "Sat Feb 27 20:01:59 EST 2010"
+        },
+        {
+          "name": "028- Taking Stock",
+          "date": "Sat Feb 27 20:00:00 EST 2010"
+        },
+        {
+          "name": "027- Mopping Up",
+          "date": "Sat Feb 27 19:59:09 EST 2010"
+        },
+        {
+          "name": "026- The Third Macedonian War",
+          "date": "Sat Feb 27 19:55:11 EST 2010"
+        },
+        {
+          "name": "025- The Syrian War",
+          "date": "Sat Feb 27 19:51:07 EST 2010"
+        },
+        {
+          "name": "024- The Second Macedonian War",
+          "date": "Sat Feb 27 19:47:42 EST 2010"
+        },
+        {
+          "name": "023e- The War With Hannibal",
+          "date": "Sat Feb 27 19:44:12 EST 2010"
+        },
+        {
+          "name": "023d- The War With Hannibal",
+          "date": "Sat Feb 27 19:41:12 EST 2010"
+        },
+        {
+          "name": "023c- The War With Hannibal",
+          "date": "Sat Feb 27 19:36:41 EST 2010"
+        },
+        {
+          "name": "023b- The War With Hannibal",
+          "date": "Sat Feb 27 19:33:26 EST 2010"
+        },
+        {
+          "name": "023a- The War With Hannibal",
+          "date": "Sat Feb 27 19:30:21 EST 2010"
+        },
+        {
+          "name": "022- Prelude to the Second Punic War",
+          "date": "Sat Feb 27 19:27:07 EST 2010"
+        },
+        {
+          "name": "021- Interbellum",
+          "date": "Sat Feb 27 19:24:02 EST 2010"
+        },
+        {
+          "name": "020b- The First Punic War",
+          "date": "Sat Feb 27 19:17:34 EST 2010"
+        },
+        {
+          "name": "020a- The First Punic War",
+          "date": "Sat Feb 27 19:10:13 EST 2010"
+        },
+        {
+          "name": "019- Prelude to the First Punic War",
+          "date": "Sat Feb 27 19:06:00 EST 2010"
+        },
+        {
+          "name": "018- A History of Rome Christmas",
+          "date": "Sat Feb 27 19:03:00 EST 2010"
+        },
+        {
+          "name": "017- Pyrrhic Victories",
+          "date": "Sat Feb 27 19:01:00 EST 2010"
+        },
+        {
+          "name": "016- The Third Samnite War",
+          "date": "Sat Feb 27 18:58:00 EST 2010"
+        },
+        {
+          "name": "015b- The Second Samnite War",
+          "date": "Sat Feb 27 18:54:00 EST 2010"
+        },
+        {
+          "name": "015a- The Second Samnite War",
+          "date": "Thu Feb 25 00:03:00 EST 2010"
+        },
+        {
+          "name": "014b- A Phalanx With Joints",
+          "date": "Wed Feb 24 23:59:54 EST 2010"
+        },
+        {
+          "name": "014a- A Phalanx With Joints",
+          "date": "Wed Feb 24 23:57:05 EST 2010"
+        },
+        {
+          "name": "013- The Latin War",
+          "date": "Wed Feb 24 23:54:55 EST 2010"
+        },
+        {
+          "name": "012- The First Samnite War",
+          "date": "Wed Feb 24 23:52:23 EST 2010"
+        },
+        {
+          "name": "011- The Morning After",
+          "date": "Wed Feb 24 23:49:16 EST 2010"
+        },
+        {
+          "name": "010: Barbarians at the Gates",
+          "date": "Wed Feb 24 23:46:30 EST 2010"
+        },
+        {
+          "name": "009- A Trojan War",
+          "date": "Wed Feb 24 23:43:43 EST 2010"
+        },
+        {
+          "name": "008- Decades of Gloom",
+          "date": "Wed Feb 24 23:41:17 EST 2010"
+        },
+        {
+          "name": "007- The Roman Washington",
+          "date": "Wed Feb 24 23:38:32 EST 2010"
+        },
+        {
+          "name": "006- The Twelve Tables",
+          "date": "Wed Feb 24 23:36:01 EST 2010"
+        },
+        {
+          "name": "005- Trials and Tribunlations",
+          "date": "Wed Feb 24 23:32:00 EST 2010"
+        },
+        {
+          "name": "004- The Public Thing",
+          "date": "Wed Feb 24 23:26:54 EST 2010"
+        },
+        {
+          "name": "003b- The Seven Kings of Rome",
+          "date": "Wed Feb 24 23:23:37 EST 2010"
+        },
+        {
+          "name": "003a- The Seven Kings of Rome",
+          "date": "Wed Feb 24 23:20:26 EST 2010"
+        },
+        {
+          "name": "002- Youthful Indiscretions",
+          "date": "Wed Feb 24 23:10:00 EST 2010"
+        },
+        {
+          "name": "001- In the Beginning",
+          "date": "Fri Jul 27 20:47:00 EDT 2007"
+        }
+      ]
     },
     {
-      "title": "Levar Burton Reads",
-      "URL": "https://rss.art19.com/levar-burton-reads"
+      "title": "LeVar Burton Reads",
+      "URL": "https://rss.art19.com/levar-burton-reads",
+      "episodeList": [
+        {
+          "name": "Bonus Episode: A Conversation with Lesley Nneka Arimah",
+          "date": "Tue Aug 08 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Episode 8: \"The Second Bakery Attack\" by Haruki Murakami",
+          "date": "Tue Aug 01 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Episode 7: \"Chivalry\" by Neil Gaiman",
+          "date": "Tue Jul 25 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Episode 6: \"Graham Greene\" by Percival Everett",
+          "date": "Tue Jul 18 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Episode 5: \"What It Means When a Man Falls From the Sky\" by Lesley Nneka Arimah",
+          "date": "Tue Jul 11 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Episode 4: \"Empty Places\" Part Two by Richard Parks",
+          "date": "Tue Jul 04 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Episode 3: \"Empty Places\" Part One by Richard Parks",
+          "date": "Tue Jun 27 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Episode 2: \"The Lighthouse Keeper\" by Daisy Johnson",
+          "date": "Tue Jun 20 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Episode 1: \"Kin\" by Bruce McAllister",
+          "date": "Tue Jun 13 03:00:00 EDT 2017"
+        },
+        {
+          "name": "Introducing… LeVar Burton Reads",
+          "date": "Fri Jun 02 03:00:00 EDT 2017"
+        }
+      ]
     }
   ]
 }

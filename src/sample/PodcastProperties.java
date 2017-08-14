@@ -1,11 +1,12 @@
 package sample;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PodcastProperties {
   private String title;
   private String URL;
-  private List<String> episodeList;
+  private List<EpisodeListEntry> episodeList;
 
   public PodcastProperties () {
 
@@ -27,11 +28,17 @@ public class PodcastProperties {
     return URL;
   }
 
-  public void setEpisodeList (List<String> episodes) {
+  public void setEpisodeList (List<EpisodeListEntry> episodes) {
     episodeList = episodes;
   }
 
-  public List<String> getEpisodeList () {
-    return episodeList;
+  public List<EpisodeListEntry> getEpisodeList () {
+    List<EpisodeListEntry> tempEpisodeList = new ArrayList<>();
+
+    for (EpisodeListEntry episode : episodeList) {
+      episode.setName(episode.getName().trim());
+      tempEpisodeList.add(episode);
+    }
+    return tempEpisodeList;
   }
 }

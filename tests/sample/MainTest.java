@@ -161,8 +161,8 @@ public class MainTest extends ApplicationTest {
     TableView table = (TableView) GuiTest.find("#mainVBox #episodeList");
     int episodeCount = table.getItems().size() - 1;
 
-    episodeListEntry firstEntry = (episodeListEntry) table.getItems().get(0);
-    episodeListEntry lastEntry = (episodeListEntry) table.getItems().get(episodeCount);
+    EpisodeListEntry firstEntry = (EpisodeListEntry) table.getItems().get(0);
+    EpisodeListEntry lastEntry = (EpisodeListEntry) table.getItems().get(episodeCount);
     assertThat(firstEntry.getName(), equalTo(episodes.get(0).toString()));
     assertThat(lastEntry.getName(), equalTo(episodes.get(1).toString()));
   }

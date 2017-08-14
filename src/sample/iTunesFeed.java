@@ -1,6 +1,10 @@
 package sample;
 
+import com.rometools.rome.feed.module.DCModuleImpl;
+import com.rometools.rome.feed.synd.SyndEnclosureImpl;
 import com.rometools.rome.feed.synd.SyndEntry;
+import com.rometools.rome.feed.synd.SyndEntryImpl;
+import org.jdom2.Element;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,7 +15,7 @@ public class iTunesFeed implements rssFeed {
   private String URL;
   private String author;
   private List<SyndEntry> entries;
-  private List<String> episodes;
+  private List<EpisodeListEntry> episodes;
   private FeedFetcher feed;
 
   public iTunesFeed (String URL) {
@@ -35,7 +39,7 @@ public class iTunesFeed implements rssFeed {
   }
 
   @Override
-  public List<String> getAllEpisodes () {
+  public List<EpisodeListEntry> getAllEpisodes () {
     return episodes;
   }
 
@@ -46,15 +50,40 @@ public class iTunesFeed implements rssFeed {
     episodes = getEntriesTitles();
   }
 
-  private List<String> getEntriesTitles () {
-    List<String> titles = new ArrayList<>();
+  private List<EpisodeListEntry> getEntriesTitles () {
+    List<EpisodeListEntry> episodeListEntryList = new ArrayList<>();
     entries = feed.getEntries();
+    //https://rss.art19.com/levar-burton-reads
+
     for (final Iterator iter = entries.iterator(); iter.hasNext(); ) {
       final SyndEntry entry = (SyndEntry) iter.next();
-      titles.add(entry.getTitle());
+      EpisodeListEntry episodeListEntry = new EpisodeListEntry();
+      episodeListEntry.setName(entry.getTitle());
+      episodeListEntry.setDescription(entry.getDescription().getValue());
+
+      final Element foreign = (Element) entry.getForeignMarkup().get(3);
+      System.out.println(foreign.getText());
+
+//      for (final Iterator foreignIterator = entry.getForeignMarkup().iterator(); foreignIterator.hasNext(); ) {
+//        final Element foreign = (Element) foreignIterator.next();
+//        System.out.println(foreign.get);
+//      }
+
+      for (final Iterator enclosureIterator = entry.getEnclosures().iterator(); enclosureIterator.hasNext(); ) {
+        final SyndEnclosureImpl enclosure = (SyndEnclosureImpl) enclosureIterator.next();
+        episodeListEntry.setType(enclosure.getType());
+        episodeListEntry.setURL(enclosure.getUrl());
+      }
+
+      for (final Iterator moduleIter = entry.getModules().iterator(); moduleIter.hasNext(); ) {
+        final DCModuleImpl module = (DCModuleImpl) moduleIter.next();
+        episodeListEntry.setDate(module.getDate().toString());
+      }
+
+      episodeListEntryList.add(episodeListEntry);
     }
 
-    return titles;
+    return episodeListEntryList;
 
   }
 }

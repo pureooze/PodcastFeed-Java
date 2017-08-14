@@ -70,7 +70,7 @@ public class PodcastListLoader {
     updateLocalPodcastData(iTunesFile);
   }
 
-  public List<String> getEpisodeList (int podcastIndex) {
+  public List<EpisodeListEntry> getEpisodeList (int podcastIndex) {
     return podcastEntry.getEpisodes(podcastIndex);
   }
 }
