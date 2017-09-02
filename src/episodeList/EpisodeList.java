@@ -1,4 +1,4 @@
-package sample;
+package episodeList;
 
 
 import javafx.collections.FXCollections;

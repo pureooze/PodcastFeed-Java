@@ -1,5 +1,6 @@
 package sample;
 
+import episodeList.EpisodeListEntry;
 import org.junit.Before;
 import org.junit.Test;
 

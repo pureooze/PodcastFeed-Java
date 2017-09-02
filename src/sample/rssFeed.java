@@ -1,5 +1,7 @@
 package sample;
 
+import episodeList.EpisodeListEntry;
+
 import java.util.List;
 
 public interface rssFeed {

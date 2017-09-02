@@ -1,8 +1,11 @@
-package sample;
+package episodeList;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class EpisodeListEntry {
   String name;
@@ -14,6 +17,14 @@ public class EpisodeListEntry {
 
   public EpisodeListEntry () {
 
+  }
+
+  public EpisodeListEntry (String name, String date, String description, String type, String URL) throws Exception {
+    setName(name);
+    setDate(date);
+    setDescription(description);
+    setType(type);
+    setURL(URL);
   }
 
   public String getName () {

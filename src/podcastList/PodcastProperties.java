@@ -1,4 +1,6 @@
-package sample;
+package podcastList;
+
+import episodeList.EpisodeListEntry;
 
 import java.util.ArrayList;
 import java.util.List;

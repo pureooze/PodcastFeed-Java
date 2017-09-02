@@ -2,6 +2,8 @@ package sample;
 
 import org.junit.Before;
 import org.junit.Test;
+import podcastList.PodcastListLoader;
+import podcastList.PodcastProperties;
 
 import java.util.ArrayList;
 import java.util.List;

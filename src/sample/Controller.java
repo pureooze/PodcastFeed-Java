@@ -1,6 +1,7 @@
 package sample;
 
 
+import episodeList.EpisodeList;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -11,9 +12,9 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import podcastList.PodcastList;
 
 import java.net.URL;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -122,7 +123,7 @@ public class Controller implements Initializable {
     return dialog.showAndWait();
   }
 
-  private void handleAddDialogResponse (Optional<String> URL) {
+  private void handleAddDialogResponse (Optional<String> URL) throws Exception {
     if (URL.isPresent()) {
       podcastList.addiTunesPodcast(URL.get());
     }

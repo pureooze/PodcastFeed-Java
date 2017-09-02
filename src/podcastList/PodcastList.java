@@ -1,4 +1,4 @@
-package sample;
+package podcastList;
 
 
 import javafx.beans.property.ListProperty;
@@ -16,6 +16,9 @@ import javafx.scene.control.*;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
+import episodeList.EpisodeListEntry;
+import sample.iTunesFeed;
+import sample.rssFeed;
 
 import java.io.IOException;
 import java.net.URL;
@@ -100,7 +103,7 @@ public class PodcastList extends AnchorPane implements Initializable {
     }
   }
 
-  public void addiTunesPodcast (String URL) {
+  public void addiTunesPodcast (String URL) throws Exception {
     iTunesFeed feed = new iTunesFeed(URL);
     saveFeedToLocalConfig(feed, "iTunes.json");
 
