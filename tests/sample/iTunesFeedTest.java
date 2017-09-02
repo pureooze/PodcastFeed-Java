@@ -1,15 +1,12 @@
 package sample;
 
-import com.sun.istack.internal.Nullable;
+import episodeList.EpisodeListEntry;
 import org.junit.Before;
 import org.junit.Test;
-
-import javax.lang.model.type.NullType;
 
 import java.util.List;
 
 import static org.junit.Assert.*;
-import static org.junit.matchers.JUnitMatchers.*;
 import static org.hamcrest.CoreMatchers.*;
 
 public class iTunesFeedTest {
@@ -58,18 +55,18 @@ public class iTunesFeedTest {
 
   @Test
   public void getAllEpisodes () throws Exception {
-    List<String> episodes;
+    List<EpisodeListEntry> episodes;
     feed = new iTunesFeed("http://historyofrome.libsyn.com/rss/");
     episodes = feed.getAllEpisodes();
-    assertThat(episodes.get(0), equalTo("The Storm Before The Storm: Chapter 1- The Beasts of Italy"));
-    assertThat(episodes.get(1), equalTo("Revolutions Launch"));
-    assertThat(episodes.get(2), equalTo("Update- One Year Later"));
+    assertThat(episodes.get(0).getName(), equalTo("The Storm Before The Storm: Chapter 1- The Beasts of Italy"));
+    assertThat(episodes.get(1).getName(), equalTo("Revolutions Launch"));
+    assertThat(episodes.get(2).getName(), equalTo("Update- One Year Later"));
 
     feed = new iTunesFeed("https://rss.art19.com/levar-burton-reads");
     episodes = feed.getAllEpisodes();
-    assertThat(episodes.get(episodes.size() - 1), equalTo("Introducing… LeVar Burton Reads"));
-    assertThat(episodes.get(episodes.size() - 2), equalTo("Episode 1: \"Kin\" by Bruce McAllister"));
-    assertThat(episodes.get(episodes.size() - 3), equalTo("Episode 2: \"The Lighthouse Keeper\" by Daisy Johnson"));
+    assertThat(episodes.get(episodes.size() - 1).getName(), equalTo("Introducing… LeVar Burton Reads"));
+    assertThat(episodes.get(episodes.size() - 2).getName(), equalTo("Episode 1: \"Kin\" by Bruce McAllister"));
+    assertThat(episodes.get(episodes.size() - 3).getName(), equalTo("Episode 2: \"The Lighthouse Keeper\" by Daisy Johnson"));
   }
 
 }

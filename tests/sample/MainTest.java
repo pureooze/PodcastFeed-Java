@@ -3,55 +3,36 @@ package sample;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
-import javafx.application.Application;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import episodeList.EpisodeListEntry;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.hamcrest.Matchers;
-import org.hamcrest.core.IsNot;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.loadui.testfx.GuiTest;
 import org.testfx.api.FxToolkit;
 import org.testfx.framework.junit.ApplicationTest;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.junit.Assert.*;
-import static org.junit.matchers.JUnitMatchers.*;
-import static org.hamcrest.CoreMatchers.*;
 
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.*;
 import static org.loadui.testfx.GuiTest.find;
 import static org.loadui.testfx.GuiTest.waitUntil;
-import static org.loadui.testfx.controls.impl.VisibleNodesMatcher.visible;
 import static org.testfx.api.FxAssert.verifyThat;
-import static org.testfx.matcher.base.NodeMatchers.isVisible;
-import static org.testfx.matcher.control.TextFlowMatchers.hasText;
 import static org.testfx.util.WaitForAsyncUtils.waitFor;
 
-import org.loadui.testfx.controls.impl.VisibleNodesMatcher;
+import podcastList.PodcastListEntry;
 
 public class MainTest extends ApplicationTest {
 
@@ -140,7 +121,7 @@ public class MainTest extends ApplicationTest {
 
   @Test
   public void testOn_User_Click_Podcast_Display_Episodes () throws Exception {
-    List<String> episodes = new ArrayList<String>();
+    List<EpisodeListEntry> episodes = new ArrayList<EpisodeListEntry>();
     List<Integer> selectedIndicies = new ArrayList<Integer>();
     List<Integer> mockIndicies = new ArrayList<Integer>();
     List<String> currentPodcast = new ArrayList<>();
@@ -148,8 +129,20 @@ public class MainTest extends ApplicationTest {
 
     mockIndicies.add(0);
     mockCurrentPodcast.add("The History of Rome");
-    episodes.add("The Storm Before The Storm: Chapter 1- The Beasts of Italy");
-    episodes.add("001- In the Beginning");
+    episodes.add(new EpisodeListEntry(
+      "The Storm Before The Storm: Chapter 1- The Beasts of Italy",
+      "2017-07-27",
+      "PLACEHOLDER",
+      "audio/mpeg",
+      "http://traffic.libsyn.com/historyofrome/SBTS_Ch1_Master.mp3?dest-id=5627"
+    ));
+    episodes.add(new EpisodeListEntry(
+      "001- In the Beginning",
+      "2007-07-27",
+      "PLACEHOLDER",
+      "audio/mpeg",
+      "http://traffic.libsyn.com/historyofrome/01-_In_the_Beginning.mp3?dest-id=5627"
+    ));
 
     ListView list = (ListView) GuiTest.find("#mainVBox #podcastList");
     list.getSelectionModel().selectFirst();
@@ -161,9 +154,17 @@ public class MainTest extends ApplicationTest {
     TableView table = (TableView) GuiTest.find("#mainVBox #episodeList");
     int episodeCount = table.getItems().size() - 1;
 
-    episodeListEntry firstEntry = (episodeListEntry) table.getItems().get(0);
-    episodeListEntry lastEntry = (episodeListEntry) table.getItems().get(episodeCount);
-    assertThat(firstEntry.getName(), equalTo(episodes.get(0).toString()));
-    assertThat(lastEntry.getName(), equalTo(episodes.get(1).toString()));
+    EpisodeListEntry firstEntry = (EpisodeListEntry) table.getItems().get(0);
+    EpisodeListEntry lastEntry = (EpisodeListEntry) table.getItems().get(episodeCount);
+
+    // Match first episode in list
+    assertThat(firstEntry.getName(), equalTo(episodes.get(0).getName()));
+    assertThat(firstEntry.getDate(), equalTo(episodes.get(0).getDate()));
+    assertThat(firstEntry.getURL(), equalTo(episodes.get(0).getURL()));
+
+    // Match second episode in list
+    assertThat(lastEntry.getName(), equalTo(episodes.get(1).getName()));
+    assertThat(lastEntry.getDate(), equalTo(episodes.get(1).getDate()));
+    assertThat(lastEntry.getURL(), equalTo(episodes.get(1).getURL()));
   }
 }

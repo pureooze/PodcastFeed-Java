@@ -1,5 +1,7 @@
 package sample;
 
+import episodeList.EpisodeListEntry;
+
 import java.util.List;
 
 public interface rssFeed {
@@ -9,5 +11,5 @@ public interface rssFeed {
 
   public String getAuthor ();
 
-  public List<String> getAllEpisodes ();
+  public List<EpisodeListEntry> getAllEpisodes ();
 }

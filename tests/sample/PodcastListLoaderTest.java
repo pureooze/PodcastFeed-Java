@@ -2,6 +2,8 @@ package sample;
 
 import org.junit.Before;
 import org.junit.Test;
+import podcastList.PodcastListLoader;
+import podcastList.PodcastProperties;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +27,8 @@ public class PodcastListLoaderTest {
     PodcastProperties item2 = new PodcastProperties();
     PodcastProperties item3 = new PodcastProperties();
 
-    item1.setTitle("History of Rome");
-    item2.setTitle("Levar Burton Reads");
+    item1.setTitle("The History of Rome");
+    item2.setTitle("LeVar Burton Reads");
 
     item1.setURL("http://historyofrome.libsyn.com/rss/");
     item2.setURL("https://rss.art19.com/levar-burton-reads");

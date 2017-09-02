@@ -1,6 +1,7 @@
-package sample;
+package podcastList;
 
-import java.util.ArrayList;
+import episodeList.EpisodeListEntry;
+
 import java.util.List;
 
 public class PodcastListEntry {
@@ -10,7 +11,7 @@ public class PodcastListEntry {
     return podcasts;
   }
 
-  public void addPodcast (String title, String URL, List<String> episodes) {
+  public void addPodcast (String title, String URL, List<EpisodeListEntry> episodes) {
     PodcastProperties prop = new PodcastProperties();
     prop.setTitle(title);
     prop.setURL(URL);
@@ -22,7 +23,7 @@ public class PodcastListEntry {
     podcasts.remove(index);
   }
 
-  public List<String> getEpisodes (int podcastIndex) {
+  public List<EpisodeListEntry> getEpisodes (int podcastIndex) {
     return podcasts.get(podcastIndex).getEpisodeList();
   }
 }

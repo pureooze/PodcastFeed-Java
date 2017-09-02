@@ -1,8 +1,10 @@
-package sample;
+package podcastList;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
+import episodeList.EpisodeListEntry;
+import sample.rssFeed;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -70,7 +72,7 @@ public class PodcastListLoader {
     updateLocalPodcastData(iTunesFile);
   }
 
-  public List<String> getEpisodeList (int podcastIndex) {
+  public List<EpisodeListEntry> getEpisodeList (int podcastIndex) {
     return podcastEntry.getEpisodes(podcastIndex);
   }
 }
